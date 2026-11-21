@@ -1,0 +1,49 @@
+/* Additions only. Uses the colour variables from style.css; no new colours. */
+
+/* ===== One layout for every page: same header, menu, content column and footer ===== */
+body.home, body.about, body.contact, body.inner{ --page-pad: max(1.5rem, calc((100% - 70rem) / 2 + 1.25rem)); }
+body.home header, body.about header, body.contact header, body.inner header{ padding: 3.5rem var(--page-pad) 3rem; }
+body.home header h1, body.about header h1, body.contact header h1, body.inner header h1{ font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.1; }
+body.home header p, body.about header p, body.contact header p, body.inner header p{ max-width: 44rem; font-family: var(--font-head); font-size: 1.2rem; }
+body.home nav ul, body.about nav ul, body.contact nav ul, body.inner nav ul{ padding: .5rem var(--page-pad); gap: .25rem 2rem; }
+body.home nav a, body.about nav a, body.contact nav a, body.inner nav a{ display: inline-block; padding: .6rem 0; font-weight: 600; font-size: .95rem; letter-spacing: .02em; }
+body.home main, body.about main, body.contact main, body.inner main{ grid-column: 1 / -1; width: 100%; max-width: 70rem; margin: 0 auto; padding: 0 1.25rem 4rem; }
+body.home footer, body.about footer, body.contact footer, body.inner footer{ padding: 2rem var(--page-pad); font-size: .95rem; }
+body.home footer p, body.about footer p, body.contact footer p, body.inner footer p{ margin: 0 0 .25rem; }
+body.home footer p:first-child, body.about footer p:first-child, body.contact footer p:first-child, body.inner footer p:first-child{ font-family: var(--font-head); font-size: 1.1rem; }
+
+/* Every page: same spacing between sections (About keeps its own bordered sections) */
+body.contact main > section{ margin-bottom: 3.5rem; }
+body.contact main > section:last-child{ margin-bottom: 0; }
+body.contact main > section.contact-intro{ margin-bottom: 0; }
+body.contact main > section.contact-form-section{ max-width: 40rem; }
+
+/* Home: the hero keeps its own heading style (the shared heading rule would underline it) */
+body.home .hero{ margin-top: 2rem; }
+body.home .hero-text h2{ margin: 0 0 8px; padding: 0; font-size: 1.6rem; }
+body.home .hero-text h2::after{ display: none; }
+body.home .price-preview .more{ margin-top: .75rem; }
+
+@media (max-width: 600px){
+    body.home header, body.about header, body.contact header, body.inner header{ padding: 2.25rem var(--page-pad) 2rem; }
+}
+
+/* ===== Forms, notices and small parts used by the new pages ===== */
+.filters{ display:flex; flex-wrap:wrap; gap:.75rem; align-items:end; margin:1rem 0; }
+.filters label{ display:grid; gap:.25rem; font-weight:600; color:var(--soil); }
+.filters input,.filters select,.form-stack input,.form-stack select,.form-stack textarea,.ussd-form input{
+    padding:.6rem .75rem; font:inherit; color:var(--ink); background:var(--field); border:2px solid #cfd8b0; border-radius:4px; }
+.form-stack{ display:grid; gap:.4rem; max-width:40rem; }
+.form-stack label{ margin-top:.5rem; font-weight:600; color:var(--soil); }
+.form-stack textarea{ min-height:6rem; }
+.flash{ padding:.8rem 1rem; margin:1rem 0; background:#e8f2d4; border-left:6px solid var(--leaf); border-radius:6px; }
+.flash.error{ background:var(--card); border-left-color:var(--grain-dark); }
+.badge{ display:inline-block; padding:.1rem .6rem; font-size:.8rem; font-weight:700; color:var(--leaf-dark); background:#e8f2d4; border-radius:99px; }
+.badge.draft{ color:var(--soil-dark); background:var(--card); border:1px solid var(--grain); }
+.sms .meta{ margin-top:.5rem; font-size:.85rem; color:var(--ink-soft); }
+.ussd-form{ display:flex; gap:.5rem; margin-top:.75rem; }
+.ussd-form input{ flex:1; min-width:0; }
+.ussd-form .hero-button{ margin-top:0; }
+.btn-link{ background:none; border:0; padding:0; font:inherit; color:var(--leaf); text-decoration:underline; cursor:pointer; }
+.empty{ color:var(--ink-soft); font-style:italic; }
+table{ margin: 1rem 0; }
