@@ -18,6 +18,10 @@ $source = $rows ? $rows[0]['source'] : 'SIMULATED';
 if (!$_GET) log_activity('forecast', 'view');
 layout_top('Forecast', 'forecast.php', 'inner');
 ?>
+    <!-- TEMPORARY: hides the "Search prices" box on this page only.
+         Delete this line once you remove the box at its source. -->
+    <style>input[placeholder="Search prices"] { display: none; }</style>
+
     <section class="page-intro">
         <h2>7-day forecast for <?= e($ward) ?></h2>
         <p>Source: <?= e($source) ?><?= $source === 'SIMULATED' ? ' — simulated forecast, replaced by the live Open-Meteo forecast when the site is online.' : ' (Open-Meteo).' ?></p>
