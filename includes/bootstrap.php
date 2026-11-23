@@ -443,6 +443,7 @@ function layout_bottom(): void {
     <p>ShambaPulse, Nairobi</p>
     <p>Site built by Kinanga Japhet and Gideon Francis, DBIT Year 1, 2026.</p>
 </footer>
+<script src="js/main.js" defer></script>
 </body>
 </html>
 <?php
